@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS employee;
-CREATE TABLE employee (
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees (
   id         INT AUTO_INCREMENT NOT NULL,
   name       VARCHAR(128) NOT NULL,
   dept       VARCHAR(128) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE employee (
   PRIMARY KEY (`id`)
 );
 
-INSERT INTO employee
+INSERT INTO employees
   (name, dept, age, email, tel, phone)
 VALUES
   ('杉下右京', '人事部', 60, 'ukyo.sugishita@whi.com', '0312345678', '09012345678'),

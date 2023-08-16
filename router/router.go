@@ -11,8 +11,8 @@ func Router(dbConn *gorm.DB) {
 	managerHandler := controllers.ManagerHandler{
 		Db: dbConn,
 	}
-	router := gin.Default()
-	router.LoadHTMLGlob("views/html/*.html")
-	router.GET("/manager", managerHandler.GetAll)
-	router.Run(":9000")
+	r := gin.Default()
+	r.LoadHTMLGlob("views/html/*.html")
+	r.GET("/manager", managerHandler.GetAll)
+	r.Run(":9000")
 }
