@@ -14,5 +14,5 @@ func Router(dbConn *gorm.DB) {
 	router := gin.Default()
 	router.LoadHTMLGlob("views/html/*.html")
 	router.GET("/manager", managerHandler.GetAll)
-
+	router.Run(":9000")
 }

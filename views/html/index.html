@@ -11,24 +11,26 @@
       <h1>社員一覧</h1>
     </header>
     <div class="wrap">
-      <div class="input">
-        <p>{{.err}}</p>
-        <!-- <form action="/new" method="post">
-          <p>社員名で検索<input type="text" name="content" size="30" placeholder="検索"/></p>
-          <p><input type="submit" value="検索" /></p>
-        </form> -->
-      </div>
-      <div class="indexGet">
-        <ul>
-          {{range.emp}}
-          <li>
-            {{.Content}}
-            <!-- <label><a href="/detail/{{.ID}}">編集</a></label>
-            <label><a href="/delete_check/{{.ID}}">削除</a></label> -->
-          </li>
-          {{end}}
-        </ul>
-      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>ユーザID</th>
+            <th>ユーザ名</th>
+            <th>ユーザページ</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range.emp }}
+          <tr>
+            <th scope="row">{{ .Id }}</th>
+            <td>{{ .Name }}</td>
+            <td><a href="/detail/{{.Id}}" type="button" class="btn btn-info">詳細</a></td>
+          </tr>
+          {{ end }}
+        </tbody>
+        <tbody>
+        </tbody>
+      </table>
     </div>
   </body>
 </html>

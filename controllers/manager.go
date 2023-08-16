@@ -14,7 +14,10 @@ type ManagerHandler struct {
 
 func (h *ManagerHandler) GetAll(c *gin.Context) {
 	var emp []models.Employee
-	h.Db.Find(&emp)
+	err := h.Db.Select("id", "name", "dept", "age", "email", "tel", "phone").Find(&emp)
+	if err != nil {
+		return
+	}
 	c.HTML(http.StatusOK, "index.html", gin.H{
 		"emp": emp,
 	})

@@ -5,8 +5,11 @@ import "github.com/jinzhu/gorm"
 type Employee struct {
 	gorm.Model
 
-	ID   int64
-	Name string
-	Dept string
-	Age  int64
+	Id    int64
+	Name  string
+	Dept  string
+	Age   int64
+	Email string
+	Tel   string
+	Phone string
 }
