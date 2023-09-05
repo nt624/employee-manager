@@ -13,6 +13,7 @@ func Router(dbConn *gorm.DB) {
 	}
 	r := gin.Default()
 	r.LoadHTMLGlob("views/html/*.html")
-	r.GET("/manager", managerHandler.GetAll)
+	r.GET("/", managerHandler.GetAll)
+	r.GET("/detail/:id", managerHandler.GetOne)
 	r.Run(":9000")
 }

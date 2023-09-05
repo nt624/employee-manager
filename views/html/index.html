@@ -16,6 +16,7 @@
           <tr>
             <th>ユーザID</th>
             <th>ユーザ名</th>
+            <th>部署</th>
             <th>ユーザページ</th>
           </tr>
         </thead>
@@ -24,6 +25,7 @@
           <tr>
             <th scope="row">{{ .Id }}</th>
             <td>{{ .Name }}</td>
+            <td>{{ .Dept }}</td>
             <td><a href="/detail/{{.Id}}" type="button" class="btn btn-info">詳細</a></td>
           </tr>
           {{ end }}
